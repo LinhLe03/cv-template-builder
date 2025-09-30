@@ -1,6 +1,6 @@
 
 import './App.css'
-import { TextInput } from './components/TextInput'
+import { InputForm } from './components/InputForm'
 
 function App() {
 
@@ -8,7 +8,7 @@ function App() {
     <>
 
 
-      <TextInput></TextInput>
+      <InputForm></InputForm>
     </>
   )
 }
