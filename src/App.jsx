@@ -1,6 +1,7 @@
 
 import './App.css'
 import { ControlledForm } from './components/ControlledForm'
+import ResumeViewer from './components/ResumeViewer'
 
 function App() {
 
@@ -9,6 +10,7 @@ function App() {
 
 
       <ControlledForm></ControlledForm>
+      <ResumeViewer></ResumeViewer>
     </>
   )
 }

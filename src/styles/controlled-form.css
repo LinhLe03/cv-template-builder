@@ -21,6 +21,10 @@ form input {
   outline: none;
   transition: 0.5s;
 }
+form input:-internal-autofill-selected {
+  background-color: white;
+  color: black;
+}
 form input:focus {
   border: 2px solid green;
 }/*# sourceMappingURL=controlled-form.css.map */

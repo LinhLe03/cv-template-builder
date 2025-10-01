@@ -3,7 +3,9 @@ import '../styles/controlled-form.scss'
 
 export function ControlledForm() {
 
-    {/* Potential solutions
+    // Controlled Form - handle general information - name, email, phone number
+
+    {/* Potential solutions for handling multiple inputs
       1. Group related state into 1 state - still repeated a lot, 
       when the only thing that change is value and name  
       
@@ -44,15 +46,34 @@ export function ControlledForm() {
 
     return (
     <>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="fullName"> Name </label>
-        <input type="text" id="fullName" name="fullName" value={formData.fullName} onChange={handleChange}></input>
+      <form className="general-info" onSubmit={handleSubmit} autoComplete="off">
+        <label htmlFor="fullName"> Full Name </label>
+        <input 
+          type="text" 
+          id="fullName" 
+          name="fullName" 
+          value={formData.fullName} 
+          onChange={handleChange} >
+        </input>
 
         <label htmlFor="email"> Email </label>
-        <input type="email" id="email" name="email" value={formData.email} onChange={handleChange}></input>
+        <input 
+          type="email" 
+          id="email" 
+          name="email" 
+          value={formData.email} 
+          onChange={handleChange}>
+        </input>
 
         <label htmlFor="phoneNumber"> Phone number </label>
-        <input type="number" id="phoneNumber" name="phoneNumber" value={formData.phoneNumber} onChange={handleChange}></input>
+        <input 
+          type="text" 
+          id="phoneNumber" 
+          name="phoneNumber" 
+          value={formData.phoneNumber} 
+          onChange={handleChange} 
+          maxLength={10}>
+        </input>
       </form>
 
       <h2>Full Name: {formData.fullName}</h2>

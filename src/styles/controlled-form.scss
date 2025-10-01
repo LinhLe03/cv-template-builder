@@ -1,6 +1,7 @@
 form {
     display: flex;
     flex-direction: column;
+    // padding: 3rem;
 
 
     label {
@@ -24,6 +25,12 @@ form {
         outline: none;
         transition: 0.5s;
     }
+
+    input:-internal-autofill-selected {
+        background-color: white;
+        color: black;
+    }
+
 
     
     input:focus {
