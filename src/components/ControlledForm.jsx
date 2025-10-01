@@ -1,6 +1,7 @@
 import { useState } from "react"
+import '../styles/controlled-form.scss'
 
-export function InputForm() {
+export function ControlledForm() {
 
     {/* Potential solutions
       1. Group related state into 1 state - still repeated a lot, 
@@ -11,13 +12,17 @@ export function InputForm() {
       
       3. Use form library i.e React Hook Form...
       
-      4. Single State hook with object
+      4. Single State hook with object (aka controlled components) - storing changes in React states
+      --> can be buggy
       
-      ==> Solution 4*/}
+      5. Mixing controlled and uncontrolled form
+      --> source: https://dev.to/ajones_codes/a-better-guide-to-forms-in-react-47f0
+      */}
 
     const [formData, setFormData] = useState({
       fullName: '',
-      email: ''
+      email: '',
+      phoneNumber: ''
     })
 
     const handleSubmit = (e) => {
@@ -40,17 +45,19 @@ export function InputForm() {
     return (
     <>
       <form onSubmit={handleSubmit}>
-        <label> Name
-          <input type="text" name="fullName" value={formData.fullName} onChange={handleChange}></input>
-        </label>
+        <label htmlFor="fullName"> Name </label>
+        <input type="text" id="fullName" name="fullName" value={formData.fullName} onChange={handleChange}></input>
 
-        <label> Email
-          <input type="email" name="email" value={formData.email} onChange={handleChange}></input>
-        </label>
+        <label htmlFor="email"> Email </label>
+        <input type="email" id="email" name="email" value={formData.email} onChange={handleChange}></input>
+
+        <label htmlFor="phoneNumber"> Phone number </label>
+        <input type="number" id="phoneNumber" name="phoneNumber" value={formData.phoneNumber} onChange={handleChange}></input>
       </form>
 
       <h2>Full Name: {formData.fullName}</h2>
-      <h3>Email: {formData.email}</h3>
+      <h2>Email: {formData.email}</h2>
+      <h2>Phone Number: {formData.phoneNumber}</h2>
       
     </>
     )

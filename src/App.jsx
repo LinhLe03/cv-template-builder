@@ -1,6 +1,6 @@
 
 import './App.css'
-import { InputForm } from './components/InputForm'
+import { ControlledForm } from './components/ControlledForm'
 
 function App() {
 
@@ -8,7 +8,7 @@ function App() {
     <>
 
 
-      <InputForm></InputForm>
+      <ControlledForm></ControlledForm>
     </>
   )
 }
