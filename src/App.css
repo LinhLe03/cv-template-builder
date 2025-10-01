@@ -5,6 +5,11 @@
   text-align: center;
 }
 
+#root {
+  color: rgb(51, 51, 51);
+  background-color: white;
+}
+
 .logo {
   height: 6em;
   padding: 1.5em;
