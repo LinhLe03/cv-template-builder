@@ -17,14 +17,11 @@
 
 :-webkit-autofill,
 :-webkit-autofill:hover, 
-:-webkit-autofill:focus {
-  
+:-webkit-autofill:focus {  
   -webkit-text-fill-color: black;
   background-color: white;
   transition: background-color 5000s ease-in-out 0s;
 }
-
-
 
 a {
   font-weight: 500;

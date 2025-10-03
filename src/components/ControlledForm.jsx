@@ -1,7 +1,6 @@
-import { useState } from "react"
 import '../styles/controlled-form.scss'
 
-export function ControlledForm() {
+export function ControlledForm( { formData, onChange }) {
 
     // Controlled Form - handle general information - name, email, phone number
 
@@ -21,47 +20,36 @@ export function ControlledForm() {
       --> source: https://dev.to/ajones_codes/a-better-guide-to-forms-in-react-47f0
       */}
 
-    const [formData, setFormData] = useState({
-      fullName: '',
-      email: '',
-      phoneNumber: ''
-    })
 
-    const handleSubmit = (e) => {
-      e.preventDefault()
-      // Handle submit will decide what to do with data i.e sendData(). 
-      // Will printout form for now
-      console.log(formData)
-    }
-
-    const handleChange = (e) => {
-
-      // https://dev.to/sidramaqbool/how-to-handle-forms-in-react-4jml
-      const { name, value } = e.target;
-      setFormData((prevData) => ({
-        ...prevData,  // Spread operator to take previous data
-        [name]: value,  // and dynamically assign name and value of inputs (Computed Property Names)
-      }))
-    }
 
     return (
     <>
-      <form className="general-info" onSubmit={handleSubmit} autoComplete="off">
-        <label htmlFor="fullName"> Full Name </label>
-        <input 
+      {/* <form className="general-info" onSubmit={handleSubmit} autoComplete="off"> */}
+        {/* <label htmlFor="fullName"> Full Name </label> */}
+        {/* <input 
           type="text" 
           id="fullName" 
           name="fullName" 
-          value={formData.fullName} 
+          value={value} 
           onChange={handleChange} >
+        </input> */}
+
+        <input 
+          type="text"
+          id="fullName" 
+          name="fullName"
+          value={formData.fullName} 
+          onChange={onChange} >
         </input>
 
-        <label htmlFor="email"> Email </label>
+        <h2></h2>
+
+        {/* <label htmlFor="email"> Email </label>
         <input 
           type="email" 
           id="email" 
           name="email" 
-          value={formData.email} 
+          value={value} 
           onChange={handleChange}>
         </input>
 
@@ -70,15 +58,15 @@ export function ControlledForm() {
           type="text" 
           id="phoneNumber" 
           name="phoneNumber" 
-          value={formData.phoneNumber} 
+          value={value} 
           onChange={handleChange} 
           maxLength={10}>
-        </input>
-      </form>
+        </input> */}
+      {/* </form> */}
 
-      <h2>Full Name: {formData.fullName}</h2>
+      {/* <h2>Full Name: {formData.fullName}</h2>
       <h2>Email: {formData.email}</h2>
-      <h2>Phone Number: {formData.phoneNumber}</h2>
+      <h2>Phone Number: {formData.phoneNumber}</h2> */}
       
     </>
     )
