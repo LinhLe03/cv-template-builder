@@ -17,14 +17,17 @@
 
 :-webkit-autofill,
 :-webkit-autofill:hover, 
-:-webkit-autofill:focus {
-  
+:-webkit-autofill:focus {  
   -webkit-text-fill-color: black;
   background-color: white;
   transition: background-color 5000s ease-in-out 0s;
 }
 
-
+button,
+button:focus,
+button:hover {
+  outline: none;
+}
 
 a {
   font-weight: 500;
@@ -62,10 +65,10 @@ button {
 button:hover {
   border-color: #646cff;
 }
-button:focus,
+/* button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
-}
+} */
 
 @media (prefers-color-scheme: light) {
   :root {

@@ -17,7 +17,8 @@ export function ControlledForm() {
       4. Single State hook with object (aka controlled components) - storing changes in React states
       --> can be buggy
       
-      5. Mixing controlled and uncontrolled form
+      5. Mixing controlled and uncontrolled form 
+      (prioritise uncontrolled, then use controlled when needed - not mixing the two --> bad practice)
       --> source: https://dev.to/ajones_codes/a-better-guide-to-forms-in-react-47f0
       */}
 
@@ -75,6 +76,8 @@ export function ControlledForm() {
           maxLength={10}>
         </input>
       </form>
+
+      
 
       <h2>Full Name: {formData.fullName}</h2>
       <h2>Email: {formData.email}</h2>
