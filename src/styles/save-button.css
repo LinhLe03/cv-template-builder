@@ -1,0 +1,10 @@
+.save-btn {
+    border-radius: 8px;
+    background-color: #1d8f2b;
+    transition: 0.5s;
+}
+
+.save-btn:hover,
+.save-btn:focus {
+    background-color: #0b3710;
+}

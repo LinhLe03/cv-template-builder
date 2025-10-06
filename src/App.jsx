@@ -2,6 +2,7 @@ import { useState } from 'react'
 import './App.css'
 import { ControlledForm } from './components/ControlledForm'
 import ResumeViewer from './components/ResumeViewer'
+import { UncontrolledForm } from './components/UncontrolledForm'
 
 function App() {
     const [formData, setFormData] = useState({
