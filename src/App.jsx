@@ -1,14 +1,23 @@
-import { useState } from 'react'
+import { Children, useState } from 'react'
 import './App.css'
-import { ControlledForm } from './components/ControlledForm'
-import ResumeViewer from './components/ResumeViewer'
+import { GeneralInfoForm } from './components/Form/GeneralInfoForm'
+import ResumeViewer from './components/ResumeViewer/ResumeViewer'
 import { UncontrolledForm } from './components/UncontrolledForm'
+import { EducationForm } from './components/Form/EducationForm'
 
 function App() {
     const [formData, setFormData] = useState({
       fullName: '',
       email: '',
-      phoneNumber: ''
+      phoneNumber: '',
+      qualifications: {
+        degree: '',
+        school: '',
+        startDate: '',
+        endDate: '',
+
+      },
+      
     })
 
     // const handleSubmit = (e) => {
@@ -34,16 +43,26 @@ function App() {
   return (
     <>
 
+      <div className='web-container'>
+        <GeneralInfoForm
+          formData={formData}
+          onChange={handleChange}
+        />
 
-      <ControlledForm
-        formData={formData}
-        onChange={handleChange}
-      >
+        <EducationForm
+          formData={formData}
+          onChange={handleChange}
+        />
+  
+        <ResumeViewer
+          formData={formData}
+        >
+          {Children}
 
-      </ControlledForm>
-      <ResumeViewer
-        formData={formData}
-      ></ResumeViewer>
+
+        </ResumeViewer>
+  
+      </div>      
     </>
   )
 }

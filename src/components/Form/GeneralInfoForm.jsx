@@ -1,6 +1,6 @@
-import '../styles/controlled-form.scss'
+import '../../styles/controlled-form.scss'
 
-export function ControlledForm( { formData, onChange }) {
+export function GeneralInfoForm( { formData, onChange, onSubmit }) {
 
     // Controlled Form - handle general information - name, email, phone number
 
@@ -25,15 +25,8 @@ export function ControlledForm( { formData, onChange }) {
 
     return (
     <>
-      {/* <form className="general-info" onSubmit={handleSubmit} autoComplete="off"> */}
-        {/* <label htmlFor="fullName"> Full Name </label> */}
-        {/* <input 
-          type="text" 
-          id="fullName" 
-          name="fullName" 
-          value={value} 
-          onChange={handleChange} >
-        </input> */}
+      <form className="general-info" onSubmit={onSubmit} autoComplete="off">
+        <label htmlFor="fullName"> Full Name </label>
 
         <input 
           type="text"
@@ -43,15 +36,13 @@ export function ControlledForm( { formData, onChange }) {
           onChange={onChange} >
         </input>
 
-        <h2></h2>
-
-        {/* <label htmlFor="email"> Email </label>
+        <label htmlFor="email"> Email </label>
         <input 
           type="email" 
           id="email" 
           name="email" 
-          value={value} 
-          onChange={handleChange}>
+          value={formData.email} 
+          onChange={onChange}>
         </input>
 
         <label htmlFor="phoneNumber"> Phone number </label>
@@ -59,18 +50,11 @@ export function ControlledForm( { formData, onChange }) {
           type="text" 
           id="phoneNumber" 
           name="phoneNumber" 
-          value={value} 
-          onChange={handleChange} 
+          value={formData.phoneNumber} 
+          onChange={onChange} 
           maxLength={10}>
-        </input> */}
-      {/* </form> */}
-
-      
-
-      {/* <h2>Full Name: {formData.fullName}</h2>
-      <h2>Email: {formData.email}</h2>
-      <h2>Phone Number: {formData.phoneNumber}</h2> */}
-      
+        </input>
+      </form>
     </>
     )
 }

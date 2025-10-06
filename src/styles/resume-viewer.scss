@@ -1,0 +1,29 @@
+.resume-viewer {
+    background-color: antiquewhite;
+    min-width: 768px;
+
+    .contact-viewer {
+        gap: 1ch;
+        display: flex;
+        justify-content: center;
+    }
+
+    .education-viewer {
+        display: flex;
+        justify-content: space-between;
+
+        .degree {
+            display: flex;
+            flex-direction: column;
+            align-items: baseline;
+            gap: 5px;
+        }
+
+        .date {
+            display: flex;
+            justify-content: baseline;
+            gap: 1ch;
+
+        }
+    }
+}
