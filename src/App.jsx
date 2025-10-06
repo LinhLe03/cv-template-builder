@@ -1,20 +1,68 @@
-
+import { Children, useState } from 'react'
 import './App.css'
-import { ControlledForm } from './components/ControlledForm'
-import ResumeViewer from './components/ResumeViewer'
+import { GeneralInfoForm } from './components/Form/GeneralInfoForm'
+import ResumeViewer from './components/ResumeViewer/ResumeViewer'
 import { UncontrolledForm } from './components/UncontrolledForm'
+import { EducationForm } from './components/Form/EducationForm'
 
 function App() {
+    const [formData, setFormData] = useState({
+      fullName: '',
+      email: '',
+      phoneNumber: '',
+      qualifications: {
+        degree: '',
+        school: '',
+        startDate: '',
+        endDate: '',
+
+      },
+      
+    })
+
+    // const handleSubmit = (e) => {
+    //   e.preventDefault()
+    //   // Handle submit will decide what to do with data i.e sendData(). 
+    //   // Will printout form for now
+    //   console.log(formData)
+    // }
+
+    const handleChange = (e) => {
+
+      // https://dev.to/sidramaqbool/how-to-handle-forms-in-react-4jml
+      const { name, value } = e.target;
+      setFormData((prevData) => ({
+        ...prevData,  // Spread operator to take previous data
+        [name]: value,  // and dynamically assign name and value of inputs (Computed Property Names)
+      }))
+    }
+
+
+
 
   return (
     <>
 
+      <div className='web-container'>
+        <GeneralInfoForm
+          formData={formData}
+          onChange={handleChange}
+        />
 
-      <ControlledForm></ControlledForm>
-      
-      <UncontrolledForm></UncontrolledForm>
+        <EducationForm
+          formData={formData}
+          onChange={handleChange}
+        />
+  
+        <ResumeViewer
+          formData={formData}
+        >
+          {Children}
 
-      <ResumeViewer></ResumeViewer>
+
+        </ResumeViewer>
+  
+      </div>      
     </>
   )
 }
