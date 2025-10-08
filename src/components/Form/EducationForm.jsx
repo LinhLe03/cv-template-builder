@@ -5,7 +5,7 @@ export function EducationForm( { formData, onChange, onSubmit }) {
 
     return (
     <>
-      <form className="general-info" onSubmit={onSubmit} autoComplete="off">
+      <form className="education" onSubmit={onSubmit} autoComplete="off">
 
         <label htmlFor="degree"> Degree </label>
         <input 
