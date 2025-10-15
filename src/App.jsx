@@ -10,15 +10,25 @@ function App() {
       fullName: '',
       email: '',
       phoneNumber: '',
-      qualifications: {
-        degree: '',
-        school: '',
-        startDate: '',
-        endDate: '',
+      // An array of objects [] being used here
+      education: [
+        {
+          id: '',
+          degree: '',
+          school: '',
+          startDate: '',
+          endDate: ''
+        }
+    ]
+  })
 
-      },
-      
-    })
+
+    console.log(formData.education)
+    
+
+
+
+    
 
     // const handleSubmit = (e) => {
     //   e.preventDefault()
@@ -26,6 +36,8 @@ function App() {
     //   // Will printout form for now
     //   console.log(formData)
     // }
+
+
 
     const handleChange = (e) => {
 
@@ -51,7 +63,8 @@ function App() {
 
         <EducationForm
           formData={formData}
-          onChange={handleChange}
+          setFormData={setFormData}
+          
         />
   
         <ResumeViewer
